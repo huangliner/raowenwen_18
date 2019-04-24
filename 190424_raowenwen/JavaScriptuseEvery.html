@@ -23,7 +23,7 @@
 			//2、检测数组var num=[1,6,3,9]中元素的值是否在2-10之间（若num中有非数字返回false）
 			var num=[1,6,3,9];
 			var dataElent = num.every(item =>{
-				if(item > 2 && item < 10 && isNaN(item)){
+				if(item >= 2 && item <= 10 && isNaN(item)){
 					return true
 				}else{
 					return false
