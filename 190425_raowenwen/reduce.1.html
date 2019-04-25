@@ -11,9 +11,8 @@
 			//用reduce()将数组[2,4,2,5,6]转换为数字24256
 			
 			var arr = [2,4,2,5,6];
-			var str = arr.reduce(function(firstValue,secondValue){
-				return firstValue =firstValue + "" + secondValue;
-				
+			var str = arr.reduce(function(pre,cur){
+				return pre =pre + "" + cur;
 			})
 			var num = parseFloat(str);
 			console.log(typeof(num) + " : " +  num);
