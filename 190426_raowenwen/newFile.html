@@ -11,39 +11,37 @@
 		/* 
 		1)、编写一个函数，有两个参数，实现将参数的值转换为对象属性的值
 		例：f(1,2)===>返回{x:1,y:2}
-		2)、编写函数实现两个数的四则运算
 		*/
 		
-		function f (x,y) {
+		function f () {
 		 		return {x:1,y:2}
 		 	}
-		var fn = f();
-		console.log(fn);
+		console.log(f());
 		
-		//加法
-		var x = 5, y = 6;
-		addition(x,y); 
-		function addition(a, b) {
+		//2)、编写函数实现两个数的四则运算
+		//addition加
+		function add(a, b) {
 		  console.log(a + b);
 		} 
-		
-		//减法
-		subtraction(x,y); 
-		function subtraction(a, b) {
+		//subtraction减
+		function sub(a, b) {
 		  console.log(a - b);
 		}
-		
-		//乘法
-		multiplication(x,y);
-		function multiplication(a, b) {
+		//multiplication乘
+		function mul(a, b) {
 		  console.log(a * b);
 		}
-		
-		//除法
-		division(x,y);
-		function division(a, b) {
+		//division除
+		function div(a, b) {
 		  console.log(a / b);
 		}
+		
+		var x = 5, y = 6;
+		add(x,y); 			//加
+		sub(x,y); 			//减
+		mul(x,y);				//乘
+		div(x,y);				//除
+		
 		</script>
 	</body>
 </html>
