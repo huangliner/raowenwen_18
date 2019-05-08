@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+	<body bgcolor="aquamarine">														<!-- 背景图片 -->
+		<div id="colee_left" style="overflow:hidden;width:500px;margin: 0 auto;">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td id="colee_left1" valign="top" align="center">
+						<table cellpadding="2" cellspacing="0" border="0">
+							<tr align="center">
+								<td>
+									<p><img src="image/right.gif"></p>
+								</td>
+								<td>
+									<p><img src="image/right.gif"></p>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td id="colee_left2" valign="top"></td>
+				</tr>
+			</table>
+		</div>
+
+		<script>
+			//移动的函数
+			//使用div时，请保证colee_left2与colee_left1是在同一行上.
+			var speed = 2;												 //速度数值越大速度越慢
+			var coleeLeft2 = document.getElementById("colee_left2");
+			var coleeLeft1 = document.getElementById("colee_left1");
+			var coleeLeft = document.getElementById("colee_left");
+
+			coleeLeft2.innerHTML = coleeLeft1.innerHTML;
+
+			function Marquee3() {
+				
+				if(coleeLeft2.offsetWidth - coleeLeft.scrollLeft <= 0) {		//由右向左；
+					coleeLeft.scrollLeft -= coleeLeft1.offsetWidth; 			///由于offsetLeft为一个负值，所以需要加一个负号；
+				}else {
+					coleeLeft.scrollLeft ++;
+				}
+			}
+			
+			//扩展:网页可见区域宽:document.body.offsetWidth(包括边线的宽)
+			//扩展:网页被卷去的左:document.body.scrollLeft
+			
+			
+			var MyMar3 = setInterval(Marquee3, speed);
+			
+			coleeLeft.onmouseover = function() {					//当鼠标移入时清除定时器
+				clearInterval(MyMar3);
+			}
+			coleeLeft.onmouseout = function() {						//当鼠标移出时重启定时器
+				MyMar3 = setInterval(Marquee3, speed);
+			}
+		</script>
+
+
+	</body>
+</html>
