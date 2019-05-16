@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			#container {
+				width: 600px;
+				height: 500px;
+				background-color: skyblue;
+				position: relative;
+
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div id="container"></div>
+		
+		
+		
+		<!-- 创建工具对象 -->
+		<script type="text/javascript">
+			var Tools = {
+				getRandom: function(min, max) {
+					min = Math.ceil(min);
+					max = Math.floor(max);
+					return Math.floor(Math.random() * (max - min + 1)) + min;
+				}
+			}
+			
+		</script>
+		<script src="js/box.js"></script>			<!-- 创建box盒子对象 -->
+		<script src="js/main.js"></script>			<!-- 生成5个方块，随机生成颜色 -->
+		
+
+	</body>
+</html>
