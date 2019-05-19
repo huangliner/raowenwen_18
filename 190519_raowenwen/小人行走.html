@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>小人行走</title>
+		<style type="text/css">
+			
+			#div1{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			.walk_show {
+				width: 120px;
+				height: 182px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.walk_show img {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			window.onload = function() {
+				var oImag = document.getElementById('img01');
+				
+				var iLeft = 0;
+				function walk() {
+					iLeft -= 120;
+					if (iLeft < -840) {
+						iLeft = 0;
+					}
+					oImag.style.left = iLeft + 'px';
+				}
+				setInterval(walk, 80);
+				
+				setInterval(function () {
+					var div = document.getElementById('div1');
+					div.style.left = div.offsetLeft + div.offsetWidth + "px";
+				},1000)
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div class="walk_show">
+				<img src="img/walking2.png" alt="人物走路" id="img01">
+			</div>
+		</div>
+		
+	</body>
+</html>
